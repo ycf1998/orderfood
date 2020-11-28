@@ -21,7 +21,7 @@ public interface UmsUserService {
 	UmsUser login(String username, String password);
 	/**
 	 * 注册
-	 * @param umsUser
+	 * @param registerDto
 	 * @return
 	 */
 	UmsUser register(RegisterDto registerDto);
