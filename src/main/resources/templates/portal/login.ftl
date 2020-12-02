@@ -63,7 +63,7 @@
 		    	<div class="input-group">
 				  <input name="code" type="text" class="form-control">
 				  <span class="input-group-btn">
-				    <button class="btn btn-default" type="button">发送</button>
+				    <button onclick="sendCode" class="btn btn-default" type="button">发送</button>
 				  </span>
 				</div>
 		    </div>
@@ -79,17 +79,65 @@
   </div>
 </div>
 <script>
+	// 登录
 	document.querySelector("#loginForm button").addEventListener('click',function(e) {
 		e.preventDefault();
+		let loginForm = document.querySelector('#loginForm');
+		let data = {
+			username: loginForm.querySelector('[name="username"]').value,
+			password: loginForm.querySelector('[name="password"]').value,
+			remember: loginForm.querySelector('[name="remember"]').checked
+		}
 		fetch('./session/login', {
 			method: 'POST',
-			body: $("#loginForm").serialize()
+			body: JSON.stringify(data),
+		    headers: new Headers({
+		    	'Content-Type': 'application/json'
+		    })
 		}).then(res => res.json())
 			.then(json => {
-				console.log(json);
+				$Message.alert(json.status/100, json.message, json.data);
+				if (json.code == 200) {
+					let logged = document.querySelectorAll('.logged');
+					let notLogged = document.querySelectorAll('.notLogged');
+					let userInfo = document.querySelector('#userInfo');
+					userInfo.innerHTML = '';
+					logged.forEach(e => {
+						e.className = e.className.replace('hidden', 'show');
+					});
+					notLogged.forEach(e => {
+						e.className = e.className.replace('show', 'hidden');
+					});
+					document.querySelector('.modal-dialog .close').click();
+				}
 			});
 	});
+	// 注册
 	document.querySelector("#regForm button").addEventListener('click',function(e) {
 		e.preventDefault();
+		fetch('./rigister', {
+			method: 'POST',
+			body: $("#regForm").serialize()
+		}).then(res => res.json())
+			.then(json => {
+				$Message.alert(json.status/100, json.message, json.data);
+				if (json.code == 200) {
+					let logged = document.querySelector('.logged');
+					let notLogged = document.querySelector('.notLogged');
+					let userInfo = document.querySelector('#userInfo');
+					userInfo.innerHTML = `欢迎，`;
+					notLogged.forEach(e => {
+						e.className = e.className.replace('hidden', 'show');
+					});
+					logged.forEach(e => {
+						e.className = e.className.replace('show', 'hidden');
+					});
+					document.querySelector('.modal-dialog .close').click();
+				}
+			});
 	});
+	// 发送验证码
+	function sendCode() {
+		
+	}
 </script>
