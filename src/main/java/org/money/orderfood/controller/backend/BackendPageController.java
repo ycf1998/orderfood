@@ -22,14 +22,36 @@ public class BackendPageController {
 		return prefix + "index";
 	}
 	
+	@GetMapping("/welcome")
+	public String welcome() {
+		return prefix + "welcome";
+	}
+	
 	@GetMapping("/login")
 	public String login() {
 		return prefix + "login";
 	}
 	
+	@GetMapping("/logout")
+	public String logout() {
+		return prefix + "login";
+	}
+		
+	// ======================== 个人
+	@GetMapping("/profile")
+	public String profile() {
+		return prefix + "profile";
+	}
+	
 	@GetMapping("/resetPwd")
 	public String resetPwd() {
 		return prefix + "resetPwd";
+	}
+	
+	// ======================= 商品
+	@GetMapping("/product/add")
+	public String productAdd() {
+		return prefix + "product/add";
 	}
 
 }

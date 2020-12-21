@@ -1,6 +1,11 @@
 spring:
   profiles:
     active: dev # 默认开发环境
+  http:
+    encoding:
+      force: true
+      charset: utf-8
+      enabled: true
   # 模板引擎freemarker
   freemarker:
     allow-request-override: false

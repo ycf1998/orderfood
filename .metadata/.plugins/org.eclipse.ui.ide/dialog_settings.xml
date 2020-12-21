@@ -3,4 +3,6 @@
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
 		<item value="E:\money\project\orderfood"/>
 	</list>
+	<section name="ExternalProjectImportWizard">
+	</section>
 </section>
