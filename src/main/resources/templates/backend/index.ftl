@@ -60,19 +60,19 @@
                     <a href="javascript:;" data-check-screen="full"><i class="fa fa-arrows-alt"></i></a>
                 </li>
                 <li class="layui-nav-item layuimini-setting">
-                    <a href="javascript:;">admin</a>
+                    <a href="javascript:;">${admin.nickname}</a>
                     <dl class="layui-nav-child">
                         <dd>
-                            <a href="javascript:;" layuimini-content-href="./profile" data-title="个人主页" data-icon="fa fa-gears">基本资料<span class="layui-badge-dot"></span></a>
+                            <a href="javascript:;" layuimini-content-href="/backend/profile" data-title="基本资料" data-icon="fa fa-gears">基本资料</a>
                         </dd>
                         <dd>
-                            <a href="javascript:;" layuimini-content-href="./resetPassword" data-title="修改密码" data-icon="fa fa-gears">修改密码</a>
+                            <a href="javascript:;" layuimini-content-href="/backend/resetPwd" data-title="修改密码" data-icon="fa fa-gears">修改密码</a>
                         </dd>
                         <dd>
                             <hr>
                         </dd>
                         <dd>
-                            <a href="./logout" class="login-out">退出登录</a>
+                            <a href="/backend/logout" class="login-out">退出登录</a>
                         </dd>
                     </dl>
                 </li>

@@ -2,7 +2,7 @@ package org.money.orderfood.service;
 
 import org.money.orderfood.dto.RegisterDto;
 import org.money.orderfood.dto.ResetPasswordDto;
-import org.money.orderfood.pojo.UmsUser;
+import org.money.orderfood.mbg.entity.UmsUser;
 
 /**
  * 

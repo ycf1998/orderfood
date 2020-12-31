@@ -96,7 +96,7 @@
 		    })
 		}).then(res => res.json())
 			.then(json => {
-				$Message.alert(json.status/100, json.message, json.data);
+				$Message.alert(json.code/100, json.message, json.data);
 				if (json.code == 200) {
 					let logged = document.querySelectorAll('.logged');
 					let notLogged = document.querySelectorAll('.notLogged');
@@ -120,7 +120,7 @@
 			body: $("#regForm").serialize()
 		}).then(res => res.json())
 			.then(json => {
-				$Message.alert(json.status/100, json.message, json.data);
+				$Message.alert(json.code/100, json.message, json.data);
 				if (json.code == 200) {
 					let logged = document.querySelector('.logged');
 					let notLogged = document.querySelector('.notLogged');

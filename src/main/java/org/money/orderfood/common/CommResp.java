@@ -20,7 +20,7 @@ public class CommResp<T> {
     /**
      * 返回状态码
      */
-    private String status;
+    private String code;
 
     /**
      * 返回消息
@@ -42,12 +42,12 @@ public class CommResp<T> {
      */
     private Map<String, Object> ext;
 
-    public String getStatus() {
-        return status;
+    public String getCode() {
+        return code;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getMessage() {
@@ -83,54 +83,54 @@ public class CommResp<T> {
     }
 
     public CommResp(){
-    	this.status = SUCCESS_CODE;
+    	this.code = SUCCESS_CODE;
     	this.message = "SUCCESS";
     }
 
-    public CommResp(String status, String message) {
-        this.status = status;
+    public CommResp(String code, String message) {
+        this.code = code;
         this.message = message;
     }
 
-    public CommResp(String status, String message, T data) {
-        this.status = status;
-        this.message = message;
-        this.data = data;
-    }
-
-    public CommResp(String status, String message, T data, Map<String, Object> ext) {
-        this.status = status;
+    public CommResp(String code, String message, T data) {
+        this.code = code;
         this.message = message;
         this.data = data;
-        this.ext = ext;
     }
 
-    public CommResp(String status, String message, T data, PageInfo pageInfo) {
-        this.status = status;
-        this.message = message;
-        this.data = data;
-        this.page = pageInfo;
-    }
-
-    public CommResp(String status, String message, T data, Map<String, Object> ext, PageInfo pageInfo) {
-        this.status = status;
+    public CommResp(String code, String message, T data, Map<String, Object> ext) {
+        this.code = code;
         this.message = message;
         this.data = data;
         this.ext = ext;
-        this.page = pageInfo;
     }
 
-    public CommResp(String status, String message, T data, Long total, Integer pageNo, Integer pageSize){
-        PageInfo pageInfo = new PageInfo(total, pageNo, pageSize);
-        this.status = status;
+    public CommResp(String code, String message, T data, PageInfo pageInfo) {
+        this.code = code;
         this.message = message;
         this.data = data;
         this.page = pageInfo;
     }
 
-    public CommResp(String status, String message, T data, Map<String, Object> ext, Long total, Integer pageNo, Integer pageSize){
+    public CommResp(String code, String message, T data, Map<String, Object> ext, PageInfo pageInfo) {
+        this.code = code;
+        this.message = message;
+        this.data = data;
+        this.ext = ext;
+        this.page = pageInfo;
+    }
+
+    public CommResp(String code, String message, T data, Long total, Integer pageNo, Integer pageSize){
         PageInfo pageInfo = new PageInfo(total, pageNo, pageSize);
-        this.status = status;
+        this.code = code;
+        this.message = message;
+        this.data = data;
+        this.page = pageInfo;
+    }
+
+    public CommResp(String code, String message, T data, Map<String, Object> ext, Long total, Integer pageNo, Integer pageSize){
+        PageInfo pageInfo = new PageInfo(total, pageNo, pageSize);
+        this.code = code;
         this.message = message;
         this.data = data;
         this.ext = ext;
@@ -183,7 +183,7 @@ public class CommResp<T> {
         return new CommResp<T>(ErrorCode.SYSTEM_ERROR.getCode(),ErrorCode.SYSTEM_ERROR.getMessage(),result);
     }
     
-    public <T>CommResp fail(String message, T result){
+    public static <T>CommResp fail(String message, T result){
         return new CommResp<T>(ErrorCode.SYSTEM_ERROR.getCode(),message,result);
     }
 

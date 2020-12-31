@@ -2,13 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>后台管理-登陆</title>
+    <title>校园订餐管理系统-登录</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
+    <link rel="icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="../lib/layui-v2.5.5/css/layui.css" media="all">
     <!--[if lt IE 9]>
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -35,18 +36,19 @@
 <div class="layui-container">
     <div class="admin-login-background">
         <div class="layui-form login-form">
-            <form class="layui-form" action="">
+            <form class="layui-form" action="/admin/session/login" method="post">
                 <div class="layui-form-item logo-title">
                     <h1>校园订餐管理系统</h1>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-username" for="username"></label>
-                    <input type="text" name="username" lay-verify="required|account" placeholder="用户名或者邮箱" autocomplete="off" class="layui-input" value="admin">
+                    <input type="text" name="username" lay-verify="required|account" placeholder="用户名" autocomplete="off" class="layui-input" value="admin">
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-password" for="password"></label>
-                    <input type="password" name="password" lay-verify="required|password" placeholder="密码" autocomplete="off" class="layui-input" value="123456">
+                    <input type="password" name="password" lay-verify="required|password" placeholder="密码" autocomplete="off" class="layui-input" value="123">
                 </div>
+                <!--
                 <div class="layui-form-item">
                     <label class="layui-icon layui-icon-vercode" for="captcha"></label>
                     <input type="text" name="captcha" lay-verify="required|captcha" placeholder="图形验证码" autocomplete="off" class="layui-input verification captcha" value="xszg">
@@ -54,6 +56,7 @@
                         <img id="captchaPic" src="../images/captcha.jpg">
                     </div>
                 </div>
+                -->
                 <div class="layui-form-item">
                     <input type="checkbox" name="rememberMe" value="true" lay-skin="primary" title="记住密码">
                 </div>
@@ -87,22 +90,18 @@
         form.on('submit(login)', function (data) {
             data = data.field;
             if (data.username == '') {
-                layer.msg('用户名不能为空');
+                layer.msg('用户名不能为空', {icon: 2});
                 return false;
             }
             if (data.password == '') {
-                layer.msg('密码不能为空');
+                layer.msg('密码不能为空', {icon: 2});
                 return false;
             }
-            if (data.captcha == '') {
-                layer.msg('验证码不能为空');
-                return false;
-            }
-            layer.msg('登录成功', function () {
-                window.location = './';
-            });
-            return false;
         });
+        
+        <#if message??>
+        	layer.msg('${message}', {icon: 2});
+        </#if>
     });
 </script>
 </body>

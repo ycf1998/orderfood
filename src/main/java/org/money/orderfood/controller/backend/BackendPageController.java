@@ -1,5 +1,7 @@
 package org.money.orderfood.controller.backend;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,11 +31,12 @@ public class BackendPageController {
 	
 	@GetMapping("/login")
 	public String login() {
-		return prefix + "login";
+		return "redirect:" + prefix + "login";
 	}
 	
 	@GetMapping("/logout")
-	public String logout() {
+	public String logout(HttpSession session) {
+		session.invalidate();
 		return prefix + "login";
 	}
 		

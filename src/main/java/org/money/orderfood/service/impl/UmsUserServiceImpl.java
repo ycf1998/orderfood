@@ -1,12 +1,11 @@
 package org.money.orderfood.service.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.time.LocalDateTime;
 
 import org.money.orderfood.dto.RegisterDto;
 import org.money.orderfood.dto.ResetPasswordDto;
-import org.money.orderfood.mapper.UmsUserMapper;
-import org.money.orderfood.pojo.UmsUser;
+import org.money.orderfood.mbg.entity.UmsUser;
+import org.money.orderfood.mbg.mapper.UmsUserMapper;
 import org.money.orderfood.service.UmsUserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

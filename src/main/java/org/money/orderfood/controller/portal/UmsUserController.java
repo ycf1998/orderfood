@@ -5,7 +5,7 @@ import javax.validation.Valid;
 
 import org.money.orderfood.common.CommResp;
 import org.money.orderfood.dto.RegisterDto;
-import org.money.orderfood.pojo.UmsUser;
+import org.money.orderfood.mbg.entity.UmsUser;
 import org.money.orderfood.service.UmsUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

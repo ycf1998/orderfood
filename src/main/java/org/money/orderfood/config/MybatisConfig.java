@@ -11,6 +11,6 @@ import org.springframework.stereotype.Component;
  * @date 2020年11月17日
  */
 @Component
-@MapperScan("org.money.orderfood.mapper")
+@MapperScan("org.money.orderfood.mbg.mapper")
 public class MybatisConfig {
 }

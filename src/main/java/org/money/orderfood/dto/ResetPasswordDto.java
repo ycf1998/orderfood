@@ -16,6 +16,9 @@ import lombok.Setter;
 @Setter
 public class ResetPasswordDto {
 	
+	@NotBlank(message="参数错误")
+	private Long id;
+	
 	@NotBlank(message="旧密码不能为空")
 	private String oldPassword;
 	

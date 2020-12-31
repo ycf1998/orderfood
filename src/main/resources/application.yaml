@@ -23,7 +23,7 @@ spring:
 mybatis:
     mapper-locations: # mapper.xml包地址
         - classpath:mapper/*.xml
-        - classpath*:org/**/mapper/*.xml
+        - classpath*:mapper/**/*.xml
 # pageHelper分页插件
 pagehelper:
     helperDialect: mysql # 数据库的方言

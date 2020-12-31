@@ -1,0 +1,2 @@
+2020/12/31：
+SQLFeatureNotSupportedException：mybatis-plus和阿里的druid冲突，新的生成器生成的不是Date和LocalDateTime导致的异常；解决：用更高版本的druid
