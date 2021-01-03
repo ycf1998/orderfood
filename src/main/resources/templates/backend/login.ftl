@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <link rel="icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="/lib/layui-v2.5.5/css/layui.css" media="all">
     <!--[if lt IE 9]>
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
     <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
@@ -67,9 +67,9 @@
         </div>
     </div>
 </div>
-<script src="../lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
-<script src="../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
-<script src="../lib/jq-module/jquery.particleground.min.js" charset="utf-8"></script>
+<script src="/lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script src="/lib/jq-module/jquery.particleground.min.js" charset="utf-8"></script>
 <script>
     layui.use(['form'], function () {
         var form = layui.form,
@@ -96,6 +96,11 @@
             if (data.password == '') {
                 layer.msg('密码不能为空', {icon: 2});
                 return false;
+            }
+            if (data.rememberMe == true) {
+                localStorage.setItem("loginInfo", data.username + "," + data.password);
+            } else {
+                localStorage.removeItem("loginInfo");
             }
         });
         

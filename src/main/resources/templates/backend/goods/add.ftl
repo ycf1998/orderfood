@@ -163,9 +163,9 @@
             stepWidth: '750px',
             height: '500px',
             stepItems: [{
-                title: '填写入款信息'
+                title: '填写基本信息'
             }, {
-                title: '确认入款信息'
+                title: '填写信息'
             }, {
                 title: '完成'
             }]

@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author money
- * @since 2020-12-31
+ * @since 2021-01-02
  */
 public interface UmsAdminMapper extends BaseMapper<UmsAdmin> {
 

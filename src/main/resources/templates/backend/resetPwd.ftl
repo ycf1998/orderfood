@@ -69,7 +69,7 @@
 				if (json.code != 200) {
 					layer.msg(json.message, {icon: 2});
 				} else {
-					window.location = '/backend/logout';
+					window.location = '/admin/logout';
 				}        	
         	});
             return false;

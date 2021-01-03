@@ -1,6 +1,7 @@
 package org.money.orderfood.service;
 
 import org.money.orderfood.dto.ResetPasswordDto;
+import org.money.orderfood.dto.UpdateAdminDto;
 import org.money.orderfood.mbg.entity.UmsAdmin;
 
 /**
@@ -11,6 +12,12 @@ import org.money.orderfood.mbg.entity.UmsAdmin;
  * @date 2020年12月31日
  */
 public interface UmsAdminService {
+	/**
+	 * 获取个人信息
+	 * @param id
+	 * @return
+	 */
+	UmsAdmin getAdminInfoById(Integer id);
 	
 	/**
 	 * 登录
@@ -27,4 +34,10 @@ public interface UmsAdminService {
 	 */
 	boolean resetPwd(ResetPasswordDto resetPasswordDto);
 
+	/**
+	 * 修改个人信息
+	 * @param updateAdminDto
+	 * @return
+	 */
+    boolean updateInfo(UpdateAdminDto updateAdminDto);
 }

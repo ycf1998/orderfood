@@ -49,6 +49,7 @@ public class CodeGenerator {
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("money");
         gc.setOpen(false);
+        gc.setFileOverride(true);
 //        gc.setSwagger2(true); //实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
 
@@ -130,7 +131,7 @@ public class CodeGenerator {
         strategy.setRestControllerStyle(true);
         // 公共父类
         // 写于父类中的公共字段
-        strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
+        //strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);

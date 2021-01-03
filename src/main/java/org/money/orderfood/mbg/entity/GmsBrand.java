@@ -17,7 +17,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class UmsUser implements Serializable {
+public class GmsBrand implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -25,34 +25,39 @@ public class UmsUser implements Serializable {
     private Integer id;
 
     /**
-     * 账号/手机
+     * logo
      */
-    private String username;
+    private String logo;
 
     /**
-     * 密码
+     * 专区大图
      */
-    private String password;
+    private String bigPic;
 
     /**
-     * 昵称
+     * 品牌名
      */
-    private String nickname;
+    private String name;
 
     /**
-     * 手机
+     * 描述
      */
-    private String phone;
+    private String desc;
 
     /**
-     * 邮箱
+     * 排序
      */
-    private String email;
+    private Integer sort;
 
     /**
-     * 头像
+     * 商品数量
      */
-    private String avatar;
+    private Integer goodsCount;
+
+    /**
+     * 是否显示：0：否；1：是
+     */
+    private Integer showStatus;
 
     /**
      * 创建时间
@@ -63,26 +68,6 @@ public class UmsUser implements Serializable {
      * 更新时间
      */
     private LocalDateTime updateTime;
-
-    /**
-     * 最后登录时间
-     */
-    private LocalDateTime lastTime;
-
-    /**
-     * 状态 0：禁用 1：启用
-     */
-    private Integer status;
-
-    /**
-     * 初次登录：0：不是；1：是
-     */
-    private Integer initLoign;
-
-    /**
-     * 备注
-     */
-    private String remark;
 
 
 }

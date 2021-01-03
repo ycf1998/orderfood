@@ -31,12 +31,6 @@ public class BackendPageController {
 	
 	@GetMapping("/login")
 	public String login() {
-		return "redirect:" + prefix + "login";
-	}
-	
-	@GetMapping("/logout")
-	public String logout(HttpSession session) {
-		session.invalidate();
 		return prefix + "login";
 	}
 		
@@ -52,9 +46,28 @@ public class BackendPageController {
 	}
 	
 	// ======================= 商品
-	@GetMapping("/product/add")
-	public String productAdd() {
-		return prefix + "product/add";
+	@GetMapping("/goods/add")
+	public String goodsAdd() {
+		return prefix + "goods/add";
 	}
 
+	@GetMapping("/goods/category")
+	public String goodsCategory() {
+		return prefix + "category/index";
+	}
+
+	@GetMapping("/goods/category/add")
+	public String goodsCategoryAdd() {
+		return prefix + "category/add";
+	}
+
+	@GetMapping("/goods/property")
+	public String goodsProperty() {
+		return prefix + "property/index";
+	}
+
+	@GetMapping("/goods/property/add")
+	public String goodsPropertyAdd() {
+		return prefix + "property/add";
+	}
 }

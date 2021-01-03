@@ -48,7 +48,7 @@ public class UmsUserServiceImpl implements UmsUserService {
     @Override
     public UmsUser register(RegisterDto registerDto) {
         UmsUser user = new UmsUser();
-        BeanUtils.copyProperties(user, registerDto);
+        BeanUtils.copyProperties(registerDto, user);
         String encodePwd = Hashing.sha512().newHasher().putString(user.getPassword(), Charsets.UTF_8).hash().toString();
         user.setPassword(encodePwd);
         user.setCreateTime(LocalDateTime.now());

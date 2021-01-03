@@ -1,5 +1,6 @@
 package org.money.orderfood.mbg.entity;
 
+import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
@@ -17,7 +18,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class UmsAdmin implements Serializable {
+public class GmsGoods implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -25,39 +26,59 @@ public class UmsAdmin implements Serializable {
     private Integer id;
 
     /**
-     * 登录名
+     * 商品编码
      */
-    private String username;
+    private String goodsNo;
 
     /**
-     * 密码
+     * 主图URL
      */
-    private String password;
+    private String mainImage;
 
     /**
-     * 昵称
+     * 商品名称
      */
-    private String nickname;
+    private String title;
 
     /**
-     * 头像
+     * 副标题
      */
-    private String avatar;
+    private String subtitle;
 
     /**
-     * 手机号码
+     * 价格
      */
-    private String phone;
+    private BigDecimal price;
 
     /**
-     * 邮箱
+     * 原价
      */
-    private String email;
+    private BigDecimal original;
 
     /**
-     * 状态：0：禁用；1：启用
+     * 标签
      */
-    private Integer status;
+    private String tags;
+
+    /**
+     * 内容
+     */
+    private String content;
+
+    /**
+     * 描述
+     */
+    private String desc;
+
+    /**
+     * 上架状态：1：是；0：不是
+     */
+    private Integer isSale;
+
+    /**
+     * 排序
+     */
+    private Integer sort;
 
     /**
      * 创建时间
@@ -68,26 +89,6 @@ public class UmsAdmin implements Serializable {
      * 更新时间
      */
     private LocalDateTime updateTime;
-
-    /**
-     * 最后登录时间
-     */
-    private LocalDateTime lastTime;
-
-    /**
-     * 初次登录：0：不是；1：是
-     */
-    private Integer initLogin;
-
-    /**
-     * 用户类型：
-     */
-    private Integer type;
-
-    /**
-     * 备注
-     */
-    private String remark;
 
 
 }

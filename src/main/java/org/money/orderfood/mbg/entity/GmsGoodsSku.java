@@ -1,5 +1,6 @@
 package org.money.orderfood.mbg.entity;
 
+import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
@@ -17,7 +18,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class UmsUser implements Serializable {
+public class GmsGoodsSku implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -25,34 +26,44 @@ public class UmsUser implements Serializable {
     private Integer id;
 
     /**
-     * 账号/手机
+     * 商品id
      */
-    private String username;
+    private Integer goodsId;
 
     /**
-     * 密码
+     * 规格名称
      */
-    private String password;
+    private String title;
 
     /**
-     * 昵称
+     * SKU库存
      */
-    private String nickname;
+    private Integer num;
 
     /**
-     * 手机
+     * 售价
      */
-    private String phone;
+    private BigDecimal price;
 
     /**
-     * 邮箱
+     * 属性id：英文逗号分隔
      */
-    private String email;
+    private String properties;
 
     /**
-     * 头像
+     * 条码
      */
-    private String avatar;
+    private String barCode;
+
+    /**
+     * 商品码
+     */
+    private String goodsCode;
+
+    /**
+     * 状态:1启用,0禁用
+     */
+    private Integer status;
 
     /**
      * 创建时间
@@ -60,29 +71,9 @@ public class UmsUser implements Serializable {
     private LocalDateTime createTime;
 
     /**
-     * 更新时间
+     * 修改时间
      */
     private LocalDateTime updateTime;
-
-    /**
-     * 最后登录时间
-     */
-    private LocalDateTime lastTime;
-
-    /**
-     * 状态 0：禁用 1：启用
-     */
-    private Integer status;
-
-    /**
-     * 初次登录：0：不是；1：是
-     */
-    private Integer initLoign;
-
-    /**
-     * 备注
-     */
-    private String remark;
 
 
 }

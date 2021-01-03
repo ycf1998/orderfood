@@ -17,7 +17,7 @@ public class PageController {
 
 	private final String prefix = "/portal/";
 
-	@GetMapping("")
+	@GetMapping("/index")
 	public String index() {
 		return prefix + "index";
 	}

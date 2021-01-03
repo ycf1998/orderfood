@@ -60,7 +60,7 @@
                     <a href="javascript:;" data-check-screen="full"><i class="fa fa-arrows-alt"></i></a>
                 </li>
                 <li class="layui-nav-item layuimini-setting">
-                    <a href="javascript:;">${admin.nickname}</a>
+                    <a href="javascript:;">${(admin.nickname)!""}</a>
                     <dl class="layui-nav-child">
                         <dd>
                             <a href="javascript:;" layuimini-content-href="/backend/profile" data-title="基本资料" data-icon="fa fa-gears">基本资料</a>
@@ -141,7 +141,7 @@
             clearUrl: "/api/clear.json", // 缓存清理接口
             urlHashLocation: true,      // 是否打开hash定位
             bgColorDefault: false,      // 主题默认配置
-            multiModule: false,          // 是否开启多模块
+            multiModule: true,          // 是否开启多模块
             menuChildOpen: false,       // 是否默认展开菜单
             loadingTime: 0,             // 初始化加载时间
             pageAnim: true,             // iframe窗口动画

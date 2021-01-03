@@ -27,13 +27,13 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">手机</label>
                 <div class="layui-input-block">
-                    <input type="number" name="phone" lay-verify="required" lay-reqtext="手机不能为空" placeholder="请输入手机"  value="${(admin.phone)!""}" class="layui-input">
+                    <input type="number" name="phone" lay-verify="phone" lay-reqtext="手机不能为空" placeholder="请输入手机"  value="${(admin.phone)!""}" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">邮箱</label>
                 <div class="layui-input-block">
-                    <input type="email" name="email"  placeholder="请输入邮箱"  value="${(admin.email)!""}" class="layui-input">
+                    <input type="email" name="email" lay-verify="email" placeholder="请输入邮箱"  value="${(admin.email)!""}" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item layui-form-text">
@@ -42,7 +42,7 @@
                     <textarea name="remark" class="layui-textarea" placeholder="请输入备注信息">${(admin.remark)!""}</textarea>
                 </div>
             </div>
-
+            <input type="hidden" value="${(admin.id)!""}" name="id" />
             <div class="layui-form-item">
                 <div class="layui-input-block">
                     <button class="layui-btn layui-btn-normal" lay-submit lay-filter="saveBtn">确认保存</button>
@@ -61,11 +61,18 @@
 
         //监听提交
         form.on('submit(saveBtn)', function (data) {
-            var index = layer.alert(JSON.stringify(data.field), {
-                title: '最终的提交信息'
-            }, function () {
-                layer.close(index);
-                miniTab.deleteCurrentByIframe();
+            fetch('/admin/update', {
+                method: 'POST',
+                body: JSON.stringify(data.field),
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                })
+            }).then(res => res.json()).then(json => {
+                if (json.code != 200) {
+                    layer.msg(json.message, {icon: 2});
+                } else {
+                    layer.msg('修改成功', {icon: 1});
+                }
             });
             return false;
         });
