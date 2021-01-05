@@ -1,6 +1,11 @@
 spring:
   profiles:
     active: dev # 默认开发环境
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10240MB
+      max-request-size: 1024MB
   http:
     encoding:
       force: true

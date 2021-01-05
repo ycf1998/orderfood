@@ -60,6 +60,11 @@ public class BackendPageController {
 	public String goodsCategoryAdd() {
 		return prefix + "category/add";
 	}
+	
+	@GetMapping("/goods/category/edit")
+	public String goodsCategoryEdit() {
+		return prefix + "category/edit";
+	}
 
 	@GetMapping("/goods/property")
 	public String goodsProperty() {

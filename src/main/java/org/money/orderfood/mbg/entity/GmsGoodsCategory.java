@@ -13,11 +13,11 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author money
- * @since 2021-01-02
+ * @since 2021-01-04
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class GmsCategories implements Serializable {
+public class GmsGoodsCategory implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -42,7 +42,12 @@ public class GmsCategories implements Serializable {
     /**
      * 描述
      */
-    private String desc;
+    private String description;
+
+    /**
+     * 商品数量
+     */
+    private Integer count;
 
     /**
      * 排序

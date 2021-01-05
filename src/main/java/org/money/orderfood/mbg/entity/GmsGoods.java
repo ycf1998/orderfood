@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author money
- * @since 2021-01-02
+ * @since 2021-01-04
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -68,7 +68,7 @@ public class GmsGoods implements Serializable {
     /**
      * 描述
      */
-    private String desc;
+    private String description;
 
     /**
      * 上架状态：1：是；0：不是

@@ -72,7 +72,7 @@
                             <hr>
                         </dd>
                         <dd>
-                            <a href="/backend/logout" class="login-out">退出登录</a>
+                            <a href="/admin/logout" class="login-out">退出登录</a>
                         </dd>
                     </dl>
                 </li>

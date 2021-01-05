@@ -1,6 +1,6 @@
 package org.money.orderfood.mbg.mapper;
 
-import org.money.orderfood.mbg.entity.GmsCategories;
+import org.money.orderfood.mbg.entity.GmsGoodsCategory;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,8 +9,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author money
- * @since 2021-01-02
+ * @since 2021-01-04
  */
-public interface GmsCategoriesMapper extends BaseMapper<GmsCategories> {
+public interface GmsGoodsCategoryMapper extends BaseMapper<GmsGoodsCategory> {
 
 }
